@@ -1,9 +1,8 @@
 # RITAS deployment repo
 
 This repo deploys a basic file and folder structure to create smooth
-maps using the
-(https://dr.lib.iastate.edu/handle/20.500.12876/93760)[RITAS
-algorithm].
+maps using the [RITAS
+algorithm](https://dr.lib.iastate.edu/handle/20.500.12876/93760).
 
 ## What do I need?
 
