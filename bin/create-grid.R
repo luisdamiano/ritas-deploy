@@ -23,7 +23,7 @@ parse_args(doc)
 
 if (interactive()) {
   datafile    <- "data/example-data.csv"
-  site        <- "Basswood"
+  site        <- "Site 1"
   resolution  <- "10,20"
   proj4string <- "+init=epsg:26915"
   output      <- "output"
