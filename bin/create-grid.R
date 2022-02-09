@@ -58,5 +58,5 @@ for (res in unique(as.numeric(parse_csl(resolution)))) {
 
   saveRDS(yGrid, gridPath)
 
-  sf::st_write(sf::st_as_sf(yGrid), gsub("\\.RDS", ".json", gridPath))
+  sf::st_write(sf::st_as_sf(yGrid), gsub("\\.RDS", ".geojson", gridPath))
 }
