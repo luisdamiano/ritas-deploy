@@ -57,4 +57,6 @@ for (res in unique(as.numeric(parse_csl(resolution)))) {
     dir.create(dirname(gridPath), recursive = TRUE)
 
   saveRDS(yGrid, gridPath)
+
+  sf::st_write(sf::st_as_sf(yGrid), gsub("\\.RDS", ".json", gridPath))
 }

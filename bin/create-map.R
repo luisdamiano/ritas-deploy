@@ -58,7 +58,20 @@ for (res in unique(as.numeric(parse_csl(resolution)))) {
     resolution  = res,
     nmax        = nmax,
     predictAt   = gridObj,
-    folder      = file.path(".", output),
+    folder      = file.path(get_proj_root(), output),
     nCores      = nCores
   )
+}
+
+# Export to geoJSON format ------------------------------------------------
+write_geoJSON <- function(x, filename) {
+  sf::write_sf(sf::st_as_sf(x), sprintf("%s.geojson", filename))
+}
+
+expDir <- file.path(get_proj_root(), output, site, year, "obj")
+expRE  <- "(00(1|2|5|6)).*?\\.RDS"
+files  <- dir(expDir, expRE, full.names = TRUE, recursive = TRUE)
+
+for (f in files) {
+  write_geoJSON(readRDS(f), tools::file_path_sans_ext(f))
 }
